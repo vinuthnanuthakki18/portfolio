@@ -74,7 +74,7 @@
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold mb-4">Contact Me</h2>
             <p class="text-lg mb-6">Feel free to reach out to discuss projects or opportunities!</p>
-            <form id="contactForm" class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
+            <form id="contactForm" class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg" onsubmit="">
                 <div class="mb-4">
                     <label for="name" class="block text-left font-bold mb-2">Name</label>
                     <input type="text" id="name" name="name" class="w-full border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-yellow-400" required>
@@ -140,6 +140,7 @@
                 if (data.success) {
                     responseMessage.textContent = 'Message sent successfully!';
                     responseMessage.classList.add('text-green-500');
+                    form.reset();
                 } else {
                     responseMessage.textContent = 'Failed to send message. Please try again.';
                     responseMessage.classList.add('text-red-500');

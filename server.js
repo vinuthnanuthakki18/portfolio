@@ -8,10 +8,11 @@ const PORT = process.env.PORT || 3001; // Use Render's PORT environment variable
 
 // Middleware for CORS - Adjust as needed for production
 app.use(cors({
-    origin: '*',  // Use specific domains in production
-    methods: 'GET,POST',
-    allowedHeaders: 'Content-Type',
+    origin: 'https://vinuthnanuthakki18.github.io',  // Allow only your frontend domain
+    methods: 'GET,POST',                             // Allowed methods
+    allowedHeaders: 'Content-Type',                  // Allowed headers
 }));
+app.options("/send-message", cors());
 
 app.use(express.json()); // Built-in JSON parser for Express
 
